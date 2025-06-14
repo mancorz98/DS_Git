@@ -1,0 +1,163 @@
+%!TEX program = lualatex
+\documentclass[aspectratio=1609]{beamer}
+\usepackage[T1]{fontenc}
+% \usepackage{english}
+% \usepackage{babel}
+\usetheme{wildcat}
+% \usepackage{beamer}
+\usepackage{minted} 
+
+\usepackage{amsfonts}
+\usepackage{unicode-math}
+
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{transparent}
+\usepackage{textpos}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{makecell}
+\usepackage{circuitikz}
+\usepackage{subcaption}
+%% CONSTANTS
+\newcommand{\La}{\mathcal{L}}
+\newcommand{\Ohm}{\Omega}
+\newcommand{\kOhm}{{\rm[k}\Omega{\rm]} }
+\newcommand{\MOhm}{{\rm[M}\Omega{\rm]} }
+
+\newcommand{\Ti}{{{\rm TiO_2}}}
+
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\M}{\mathcal{M}}
+
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\Ron}{R_{\rm ON}}
+\newcommand{\Roff}{R_{\rm OFF}}
+\newcommand{\von}{V_{\rm ON}}
+\newcommand{\voff}{V_{\rm OFF}}
+\newcommand{\q}{q}
+\newcommand{\p}{p}
+
+\newcommand{\ua}{v}
+\newcommand{\ia}{i}
+\newcommand{\phia}{\varphi}
+\newcommand{\xw}{x}
+\newcommand{\der}{{\rm{d}} }
+\newcommand{\sbl}[1]{\textbf{(#1)}}
+\newcommand{\y}{$\rm Y$}
+\newcommand{\D}{$\rm D$}
+\newcommand{\yn}{$\rm Y_N$}
+\newcommand{\ynn}{$\rm Y_{N-mN}$}
+\newcommand{\ynp}{$\rm Y_{N-mP}$}
+\newcommand{\dert}[1]{\frac{{\rm d} {#1}}{{\rm d} t} }
+\newcommand{\inv}[1]{\frac{1}{#1} }
+
+\definecolor{aghgreen}{RGB}{0, 105, 60}
+\definecolor{aghblack}{RGB}{30,30,30}
+\definecolor{aghred}{RGB}{167, 25, 48}
+
+
+
+\usepackage{tabularx}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+\definecolor{linkcolor}{HTML}{0B5394}       % Deep blue
+\definecolor{citecolor}{HTML}{109618}       % Forest green
+\definecolor{urlcolor}{HTML}{981C1C}        % Deep red
+\definecolor{filecolor}{HTML}{6B4C9A}       % Purple
+\usepackage[font={footnotesize,it}]{caption}
+\usetikzlibrary{arrows.meta, positioning}
+\input{nodes/nodes}
+
+
+\usepackage{adjustbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\hypersetup{
+    % Color settings
+    linkcolor=nudarkteal,          
+    urlcolor=nudarkteal,           % Internal links
+}
+
+
+
+\title{Simulations, measurements, and modeling of memristive elements.\\
+\small Supervisor: prof. dr hab. inż. Zbigniew Galias, \\
+Assistant supervisor: dr inż. Bartłomiej Garda
+}
+\date{April 2025}
+\author{Karol Bednarz}
+
+
+
+
+% You change the titlegraphic to whatever you want, or comment it out to remove it.
+\titlegraphic{\includegraphics[scale=0.5]{agh_znk_ngt_cmyk.eps}}
+
+% % You can directly change the colors using the following macros.
+% % You must redefine colors AFTER the theme is loaded.
+% % For example, these provide shades of Yale Blue (#00356b)
+% \definecolor{wcprimary}{RGB}{0,53,107}      % Main color
+% \definecolor{wcprimary140}{RGB}{0, 34, 70}
+% \definecolor{wcprimary130}{RGB}{0, 40, 80}
+% \definecolor{wcprimary120}{RGB}{0, 45, 91}
+% \definecolor{wcprimary110}{RGB}{0, 50, 102}
+% \definecolor{wcprimary40}{RGB}{153, 174, 196}
+% \definecolor{wcprimary30}{RGB}{179, 194, 211}
+% \definecolor{wcprimary20}{RGB}{204, 215, 225}
+% \definecolor{wcprimary10}{RGB}{230, 235, 240}
+
+% % Now for the alerted orange (#bd5319) and example green (#5f712d)
+% \definecolor{wcalerted}{RGB}{189,83,25}
+\definecolor{wcexample}{RGB}{95,113,45}
+
+% % If you want to change the slide background color, 
+% % you can use the following command:
+% \setbeamercolor{background canvas}{bg=wcexample!90}
+
+% % Turn off section slides
+% \AtBeginSection{}
+
+% Change the font theme
+\usefonttheme{wildcat-overleaf} 
+\setmathrm{Times} % change math mode font; only used in second result
+\setmathfont{Latin Modern Math}
+
+
+% % Change the bg pattern manually: Simple Single Color
+% \renewcommand{\bgpattern}{
+%     \draw[color=wcprimary,fill=wcprimary] (0,0) rectangle (\paperwidth,\paperheight);
+% }
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+
+
+
+\standout{Thank You for attention.}
+
+
+\end{document}
