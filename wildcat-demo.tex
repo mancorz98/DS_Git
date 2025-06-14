@@ -95,7 +95,7 @@
 
 
 
-\title{ From Email Chaos to Seamless Collaboration: How Git Could Transform Research Teamwork\\
+\title{From Email Chaos to Seamless Collaboration: How Git Could Transform Research Teamwork\\
 \small Supervisor: prof. dr hab. inż. Zbigniew Galias, \\
 Assistant supervisor: dr inż. Bartłomiej Garda
 }
@@ -196,7 +196,121 @@ Assistant supervisor: dr inż. Bartłomiej Garda
 \end{frame}
 
 
+\begin{frame}[fragile]{Key Git Concepts}
+    \begin{tblock}{Repository (Repo)}
+        Your project folder with complete version history
+        \begin{itemize}
+            \item \verb|git init| - Create a new repository
+            \item \verb|git clone https://github.com/user/project.git| - Copy existing repository
+        \end{itemize}
+        \end{tblock}
+        \begin{tblock}{Commit}
+            A snapshot of your project at a specific point in time
+            \begin{itemize}
+                \item \verb|git add <filepath/.>| - Stage files for commit
+                \item \verb|git commit -m "Add analysis results"| - Save snapshot with message
+                \item \verb|git log| - View commit history
+            \end{itemize}
+        \end{tblock}
+\end{frame}
 
+\begin{frame}[fragile]{}
+    \footnotesize
+    \begin{tblock}{Branch}
+        Parallel version of your project for testing new ideas
+        \begin{itemize}
+            \item \verb|git branch experiment| - Create new branch
+            \item \verb|git checkout experiment| - Switch to branch
+            \item \verb|git branch -a| - List all branches
+        \end{itemize}
+        \end{tblock}
+\begin{tblock}{Merge}
+    Combining changes from different branches or contributors
+    \begin{itemize}
+        \item \verb|git checkout main| - Switch to main branch
+        \item \verb|git merge experiment| - Merge experiment branch into main
+    \end{itemize}
+    \end{tblock}
+    \begin{tblock}{Remote}
+        Online copy of your repository (e.g., GitHub, GitLab)
+        \begin{itemize}
+            \item \verb|git remote add origin https://github.com/user/repo.git| - Add remote
+            \item \verb|git push origin main| - Upload changes to remote
+            \item \verb|git pull origin main| - Download changes from remote
+        \end{itemize}
+        \end{tblock}
+\end{frame}
+
+\begin{frame}[fragile]{Git Workflow for Research Teams}
+    \vspace{-0.5cm}
+    \begin{center}
+        \begin{columns}
+            \begin{column}{0.55\linewidth}
+                \resizebox{!}{\linewidth}{%
+                \begin{tikzpicture}[
+                    node distance=1.5cm,
+                    box/.style={rectangle, draw, fill=blue!20, text width=2.5cm, text centered, rounded corners, minimum height=1cm},
+                    command/.style={rectangle, draw, fill=gray!10, text width=3.5cm, text centered, rounded corners, minimum height=0.8cm, font=\small},
+                    arrow/.style={->, thick, blue!70}
+                ]
+                
+                % Main workflow boxes
+                \node[box] (clone) {1. \textbf{Clone}\\Get copy of project};
+                \node[box, below=of clone] (pull) {2. \textbf{Pull}\\Download latest changes};
+                \node[box, below=of pull] (edit) {3. \textbf{Edit}\\Make contributions};
+                \node[box, below=of edit] (add) {4. \textbf{Add}\\Stage changes};
+                \node[box, below=of add] (commit) {5. \textbf{Commit}\\Save with message};
+                \node[box, below=of commit] (push) {6. \textbf{Push}\\Share with team};
+                
+                % Command examples (to the right)
+                \node[command, right=3cm of clone] (clone-cmd) {\texttt{git clone <url>}};
+                \node[command, right=3cm of pull] (pull-cmd) {\texttt{git pull origin main}};
+                \node[command, right=3cm of edit] (edit-cmd) {Edit files in your\\favorite editor};
+                \node[command, right=3cm of add] (add-cmd) {\texttt{git add .}\\or \texttt{git add filename}};
+                \node[command, right=3cm of commit] (commit-cmd) {\texttt{git commit -m}\\{\texttt{"Description"}}};
+                \node[command, right=3cm of push] (push-cmd) {\texttt{git push origin main}};
+                
+                % Main workflow arrows
+                \draw[arrow] (clone) -- (pull);
+                \draw[arrow] (pull) -- (edit);
+                \draw[arrow] (edit) -- (add);
+                \draw[arrow] (add) -- (commit);
+                \draw[arrow] (commit) -- (push);
+                
+                % Loop back arrow
+                \draw[arrow, dashed] (push.east) -- ++(1,0) -- ++(0,6.5) -- ++(-1,0) -- (pull.east);
+                
+                % Command arrows
+                \draw[->, gray] (clone) -- (clone-cmd);
+                \draw[->, gray] (pull) -- (pull-cmd);
+                \draw[->, gray] (edit) -- (edit-cmd);
+                \draw[->, gray] (add) -- (add-cmd);
+                \draw[->, gray] (commit) -- (commit-cmd);
+                \draw[->, gray] (push) -- (push-cmd);
+                
+                % Labels
+                \node[above=0.3cm of clone, font=\large\bfseries] {Git Collaboration Workflow};
+                \node[right=0.5cm of push-cmd, font=\small, text=red] {Repeat for next changes};
+                
+                \end{tikzpicture}
+                }
+            \end{column}
+        \begin{column}{0.4\linewidth}
+                
+    \begin{talert}{Key Points}
+        \begin{itemize}
+            \item Start with \textbf{Clone} only once per project
+            \item Always \textbf{Pull} before making changes
+            \item The cycle \textbf{Pull $\to$ Edit $\to$ Add $\to$ Commit $\to$ Push} repeats
+            \item Use descriptive commit messages for better collaboration
+        \end{itemize}
+        \end{talert}
+        
+        \end{column}
+    \end{columns}
+    \end{center}
+
+    \end{frame}
 
 \standout{Thank You for attention.}
 
