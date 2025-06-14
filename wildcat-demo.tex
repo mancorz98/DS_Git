@@ -89,10 +89,15 @@
 
 \hypersetup{
     % Color settings
+    colorlinks=true,
     linkcolor=nudarkteal,          
-    urlcolor=nudarkteal,           % Internal links
+    urlcolor=nudarkteal
 }
+% Set URL style to use document font (not monospace)
+\urlstyle{same}
 
+% Then redefine how URLs are formatted
+\renewcommand{\UrlFont}{\itshape}
 
 
 \title{From Email Chaos to Seamless Collaboration: How Git Could Transform Research Teamwork\\
@@ -150,9 +155,6 @@ Assistant supervisor: dr inż. Bartłomiej Garda
 \titlepage
 \end{frame}
 
-\begin{frame}{Table of Contents}
-    \tableofcontents
-\end{frame}
 
 \section{Introduction}
 \begin{frame}[fragile]{The Research Collaboration Challenge}
@@ -309,9 +311,147 @@ Assistant supervisor: dr inż. Bartłomiej Garda
         \end{column}
     \end{columns}
     \end{center}
-
     \end{frame}
 
+    \begin{frame}{Aplications and Possible Scenarios}
+        \small
+        \begin{columns}
+            \begin{column}{0.55\linewidth}
+                \begin{talert}{Aplications}
+                    \textbf{Manuscript Writing:}
+                    \begin{itemize}
+                        \item Track revisions and reviewer responses
+                        \item Collaborate on papers with multiple authors
+                        \item Maintain different versions for different journals
+                    \end{itemize}
+                    \textbf{Data Analysis:}
+                    \begin{itemize}
+                        \item Version control for analysis scripts
+                        \item Track parameter changes and results
+                        \item Share reproducible analysis pipelines
+                    \end{itemize}
+                \end{talert}
+            \end{column}
+            \begin{column}{0.55\linewidth}
+                \begin{texample}{Research Scenarios}
+                    \textbf{Scenario 1: Multi-author Paper}
+                    \begin{itemize}
+                        \item Each author works on different sections
+                        \item Git merges contributions automatically
+                        \item Complete history of who wrote what
+                    \end{itemize}
+                    \textbf{Scenario 2: Code development}
+                    \begin{itemize}
+                        \item Collaboratively develop analysis tools
+                        \item Test new features without breaking working code
+                        \item Easy rollback if something goes wrong
+                    \end{itemize}
+                \end{texample}
+            \end{column}
+        \end{columns}
+        
+    \end{frame}
+    \begin{frame}{Git online platforms}
+        \justifying As a distributed version control system, Git does not require a separate server application. However, there are services that extend the original software, primarily by adding access control, support for managing multiple repositories, and a web interface.
+        \begin{tblock}{GitHub}
+        \begin{itemize}
+            \item Most popular platform
+            \item Excellent for open science
+            \item Free private repositories for research
+        \end{itemize}
+        \end{tblock}
+        \begin{tblock}{GitLab}
+            \begin{itemize}
+                \item Strong institutional options
+                \item Built-in CI/CD for automated testing
+                \item Self-hosted options available
+            \end{itemize}
+        \end{tblock}
+    \end{frame}
+
+    \begin{frame}{Common concerns}
+        \vspace{-0.6cm}
+        \footnotesize
+        \begin{tblock}{{"It's too technical"}}
+            \begin{itemize}
+                \item Modern GUI tools make Git accessible
+                \item Learn gradually, starting with basic operations
+                \item Focus on concepts, not commands
+            \end{itemize}
+            \end{tblock}
+            
+            \begin{tblock}{{"We don't write code"}}
+            \begin{itemize}
+                \item Git works with any file type
+                \item Particularly valuable for text-based work
+                \item Many researchers use it for papers and documentation
+            \end{itemize}
+            \end{tblock}
+            
+            \begin{tblock}{{"Our files are too large"}}
+            \begin{itemize}
+                \item Git LFS (Large File Storage) handles big files
+                \item Consider data management strategies
+                \item Use selective repository organization
+            \end{itemize}
+            \end{tblock}
+            
+        
+    \end{frame}
+
+
+    \begin{frame}{File Type Recommendations}
+
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+    \begin{texample}{{\textbf{Recommended}}}
+    \textbf{Text-based files:}
+    \begin{itemize}
+        \item Source code (.py, .r, .m, .cpp)
+        \item LaTeX documents (.tex, .bib)
+        \item Markdown files (.md, .txt)
+        \item Configuration files (.yaml, .json, .xml)
+        \item Scripts and makefiles
+        \item CSV data files (small-medium)
+        \item Documentation files
+    \end{itemize}
+    \end{texample}
+\end{column}
+\begin{column}{0.48\textwidth}
+    \begin{talert}{\textbf{ Not Recommended} (could be excluded using \texttt{.gigignore} file)}
+    \textbf{Binary/Large files:}
+    \begin{itemize}
+        \item Images/figures (.jpg, .png, .pdf)
+        \item Large datasets (>100MB)
+        \item Video/audio files
+        \item Compiled executables
+        \item Office documents (.docx, .xlsx)
+        \item Temporary/cache files
+        \item Log files
+    \end{itemize}
+    \end{talert}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Learning resources}
+    \small
+        \begin{texample}{\textbf{Courses:}}
+        \begin{itemize}
+            \item GitHub Skills  url: \url{https://skills.github.com/}
+            \item Git-it Tutorial  url: \url{https://jlord.computer/git-it/}
+            \item Codecademy Git Course  url: \url{https://www.codecademy.com/learn/learn-git}
+            \item freeCodeCamp Git Tutorial  url: \url{https://www.youtube.com/watch?v=zTjRZNkhiEU}
+            \item GIT CHEAT SHEET url: \url{https://education.github.com/git-cheat-sheet-education.pdf}
+        \end{itemize}
+    \end{texample}
+        \begin{talert}{\textbf{Research-Specific:}}
+        \begin{itemize}
+            \item Version Control for Scientists url: \url{https://www.youtube.com/watch?v=ohTW4FJdmeQ}
+            \item Git for scientists - Neurath's boat url: \url{https://neurathsboat.blog/post/git-intro/}
+        \end{itemize}
+    \end{talert}
+\end{frame}
 \standout{Thank You for attention.}
 
 \end{document}
